@@ -105,12 +105,3 @@ fabric.properties
 .directory
 .gitignore
 .idea/
-README.md
-app.js
-bin/
-bower.json
-node_modules/
-package.json
-public/
-routes/
-views/
