@@ -14,5 +14,11 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "animate.css": "^3.5.2"
+  }
 }

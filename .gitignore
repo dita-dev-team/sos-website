@@ -105,3 +105,4 @@ fabric.properties
 .directory
 .gitignore
 .idea/
+/bower_components/
