@@ -1,9 +1,10 @@
 {
-  "name": "School of Science Website",
+  "name": "sos-website",
   "description": "School of Science Website",
   "main": "app.js",
   "authors": [
-    "Nathan Mkaya <nathanmkaya@gmail.com>"
+    "Nathan Mkaya <nathanmkaya@gmail.com>",
+    "Michael Bukachi <michaelbukachi@gmail.com"
   ],
   "license": "Apache 2",
   "homepage": "",

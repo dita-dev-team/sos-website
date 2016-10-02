@@ -1,7 +1,36 @@
 doctype html
 html
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
   head
     title= title
+    link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse-main')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+        #navbar-collapse-main.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar.navbar-right
+            li
+              a(href='#home') Home
+            li
+              a(href='#about') About us
+            li
+              a(href='#events') Clubs & events
+            li
+              a(href='#programmes') Programmes
+            li
+              a(href='#faculty') Faculty
+            li
+              a(href='#contact') Contact us
+
     block content
+  script(src='libs/jquery/dist/jquery.min.js')
+  script(src='libs/bootstrap/dist/js/bootstrap.min.js')

@@ -106,3 +106,5 @@ fabric.properties
 .gitignore
 .idea/
 /bower_components/
+/design specifications/
+/public/libs/
