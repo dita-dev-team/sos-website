@@ -38,7 +38,7 @@ var faculty = connection.define('faculty',{
   },
   department:
   {
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
     allowNull: false
   },
   position:
