@@ -38,7 +38,11 @@ var Events = connection.define('events', {
 var faculty = connection.define('facutly',{
   facultyName:{type: Sequelize.STRING},
   department:{type: Sequelize.STRING},
-  position:{type: Sequelize.STRING},
+  position:
+  {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
   image_url:{type: Sequelize.TEXT}
 });
 
