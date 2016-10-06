@@ -10,7 +10,7 @@ var connection = new Sequelize('sos_website', 'root', 'root'
 }
 */);
 
-var Events = connection.define('Events', {
+var Events = connection.define('events', {
   title:
   {
     type: Sequelize.STRING,
@@ -22,26 +22,27 @@ var Events = connection.define('Events', {
         if(!val.length)
           throw new Erro ('empty strings not allowed for a title.');
       }
-    }
+    },
+    unique:true
   },
   venue:
   {
     type: Sequelize.STRING
   },
-  time:{},
+  time:{Sequelize.DATE},
   description:{
     type: Sequelize.TEXT
   }
 });
 
-var faculty = connection.define('Facutly',{
+var faculty = connection.define('facutly',{
   facultyName:{},
   department:{},
   position:{},
   image_url:{}
 });
 
-var Photos = db.define('Photo_urls', {
+var Photos = db.define('photo_urls', {
   image_url:{}
 });
 
