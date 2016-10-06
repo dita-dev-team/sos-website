@@ -25,19 +25,22 @@ var Events = connection.define('events', {
     },
     unique:true
   },
-  venue:
-  {
-    type: Sequelize.STRING
-  },
+  venue:{type: Sequelize.STRING},
   time:{type: Sequelize.DATE},
-  description:{
-    type: Sequelize.TEXT
-  }
+  description:{type: Sequelize.TEXT}
 });
 
-var faculty = connection.define('facutly',{
-  facultyName:{type: Sequelize.STRING},
-  department:{type: Sequelize.STRING},
+var faculty = connection.define('faculty',{
+  facultyName:
+  {
+    type: Sequelize.STRING,
+    allowNull: false
+  },
+  department:
+  {
+    type: Sequelize.STRING
+    allowNull: false
+  },
   position:
   {
     type: Sequelize.STRING,
