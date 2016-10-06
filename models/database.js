@@ -29,21 +29,21 @@ var Events = connection.define('events', {
   {
     type: Sequelize.STRING
   },
-  time:{Sequelize.DATE},
+  time:{type: Sequelize.DATE},
   description:{
     type: Sequelize.TEXT
   }
 });
 
 var faculty = connection.define('facutly',{
-  facultyName:{},
-  department:{},
-  position:{},
-  image_url:{}
+  facultyName:{type: Sequelize.STRING},
+  department:{type: Sequelize.STRING},
+  position:{type: Sequelize.STRING},
+  image_url:{type: Sequelize.TEXT}
 });
 
-var Photos = db.define('photo_urls', {
-  image_url:{}
+var Photos = connection.define('photo_urls', {
+  image_url:{type: Sequelize.TEXT}
 });
 
 connection.sync();
