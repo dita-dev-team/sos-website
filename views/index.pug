@@ -3,9 +3,12 @@ extends layout
 block content
   // first section - Home
   #home.home
-    .text-center
-      h1= title
-      p Welcome to the #{title}
+    .content
+      img.logo(src='images/daystar.png')
+      h1 School of
+      h3 science, engineering and health
+      button.btn.btn-circle(title='Scroll down')
+        i.glyphicon.glyphicon-chevron-down
 
   // second section - About
   #about
