@@ -59,6 +59,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-newEvent("title","venue",null,"bla bla bla");
+db.newEvent("title","venue",null,"bla bla bla");
 
 module.exports = app;
