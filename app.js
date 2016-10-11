@@ -60,7 +60,9 @@ app.use(function(err, req, res, next) {
 });
 
 db.newEvent("title","venue",null,"bla bla bla");
+
 db.newFaculty("dummy name", "dummy department", "dummy position");
+
 db.newPhotos("http://dummy.data.com");
 
 module.exports = app;
