@@ -80,7 +80,47 @@
     }
   }
 
+  function newFaculty(newName, newDepartment, newPosition)
+  {
+    try
+    {
+      faculty.create
+      ({
+        facultyName: newName,
+        department: newDepartment,
+        position: newPosition
+      }).then(function(err)
+      {
+        console.log("faculty member saved");
+      });
+    }
+    catch (e)
+    {
+      console.log(e.message);
+    }
+  }
+
+  function newPhotos(newImageUrl)
+  {
+    try
+    {
+      photos.create
+      ({
+        image_url: newImageUrl
+      }).then(function(err)
+      {
+        console.log("Image Url Saved");
+      });
+    }
+    catch (e)
+    {
+
+    }
+  }
+
   module.exports =
   {
-    newEvent: newEvent
+    newEvent: newEvent,
+    newFaculty: newFaculty,
+    newPhotos: newPhotos
   }
