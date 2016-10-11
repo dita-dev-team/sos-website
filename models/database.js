@@ -10,7 +10,7 @@ var connection = new Sequelize('sos_website', 'root', 'root'
 }
 */);
 
-var Events = connection.define('events',
+var events = connection.define('events',
 {
   title:
   {
@@ -49,9 +49,34 @@ var faculty = connection.define('faculty',
   image_url:{type: Sequelize.TEXT}
 });
 
-var Photos = connection.define('photo_urls',
+var photos = connection.define('photo_urls',
 {
   image_url:{type: Sequelize.TEXT}
 });
 
 connection.sync();
+
+function newEvent(newTitle, newVenue, newTime, newDescription)
+{
+
+//var newTitle, newVenue, newTime, newDescription;
+  try
+  {
+    events.create
+    ({
+      title: newTitle,
+      venue: newVenue,
+      time: newTime,
+      description: newDescription
+    }).then
+    (function(err)
+    {
+      console.log("event saved");
+    });
+
+  }
+  catch (e)
+  {
+      console.log(e.message);
+  }
+}

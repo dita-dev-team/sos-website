@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+//models
 var db = require('./models/database');
 
 var app = express();
@@ -58,5 +59,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+db.newEvent("title","venue",null,"bla bla bla");
 
 module.exports = app;
