@@ -114,13 +114,60 @@
     }
     catch (e)
     {
-
+      console.log(e.message);
     }
   }
 
+  function findFaculty(memberName)
+  {
+    try
+    {
+        faculty.find
+        ({
+          where:{facultyName: memberName}
+        });
+    }
+    catch (e)
+    {
+      console.log(e.message);
+    }
+  }
+
+  function findPhoto(photoUrl)
+  {
+    try
+    {
+        photos.find
+        ({
+          where:{image_url: photoUrl}
+        });
+    }
+    catch (e)
+    {
+      console.log(e.message);
+    }
+  }
+
+  function findEvent(eventTitle)
+  {
+    try
+    {
+        events.find
+        ({
+          where:{title: eventTitle}
+        });
+    }
+    catch (e)
+    {
+      console.log(e.message);
+    }
+  }
   module.exports =
   {
     newEvent: newEvent,
     newFaculty: newFaculty,
-    newPhotos: newPhotos
+    newPhotos: newPhotos,
+    findFaculty: findFaculty,
+    findPhoto: findPhoto,
+    findEvent: findEvent
   }
