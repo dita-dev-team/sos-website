@@ -59,7 +59,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-db.deleteFaculty('dummy name');
-db.deletePhoto('../images/dummy.jpg');
+db.updateEvent('new event','current event');
 
 module.exports = app;

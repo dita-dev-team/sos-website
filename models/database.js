@@ -199,6 +199,54 @@
       where:{image_url: photoUrl}
     });
   }
+
+/*
+ * Update functions for editing data
+ * on the various tables
+ * the basics are,
+ * UPDATE events SET title = updateTitle WHERE title = currentTitle
+ * as in the below function.
+ * Will add later function overloads for the below function
+ */
+
+
+  function updateEvent(updateTitle, currentTitle)
+  {
+    events.update
+    ({
+      title: updateTitle
+    },
+    {
+      where:{ title: currentTitle}
+    });
+  }
+
+  function updateFaculty(newFacultyName, currentFacultyName)
+  {
+    faculty.update
+    ({
+        facultyName: newFacultyName
+    },
+    {
+      where: {facultyName: currentFacultyName}
+    });
+  }
+
+  function updatePhoto(newPhotoUrl, currentPhotoUrl)
+  {
+    photos.update
+    ({
+      image_url: newPhotoUrl
+    },
+    {
+      where: {image_url: currentPhotoUrl}
+    });
+  };
+  
+  /*
+   * Exports functions so that other files and classes can use them
+   */
+
   module.exports =
   {
     newEvent: newEvent,
@@ -209,5 +257,6 @@
     findEvent: findEvent,
     deleteEvent: deleteEvent,
     deleteFaculty: deleteFaculty,
-    deletePhoto: deletePhoto
+    deletePhoto: deletePhoto,
+    updateEvent: updateEvent
   }
