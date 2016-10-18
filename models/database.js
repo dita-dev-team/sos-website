@@ -242,7 +242,7 @@
       where: {image_url: currentPhotoUrl}
     });
   };
-  
+
   /*
    * Exports functions so that other files and classes can use them
    */
@@ -258,5 +258,7 @@
     deleteEvent: deleteEvent,
     deleteFaculty: deleteFaculty,
     deletePhoto: deletePhoto,
-    updateEvent: updateEvent
+    updateEvent: updateEvent,
+    updateFaculty: updateFaculty,
+    updatePhoto: updatePhoto
   }

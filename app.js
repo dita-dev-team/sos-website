@@ -59,6 +59,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
-db.updateEvent('new event','current event');
 
 module.exports = app;
