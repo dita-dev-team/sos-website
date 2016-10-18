@@ -60,7 +60,7 @@ app.use(function(err, req, res, next) {
 });
 
 db.findFaculty('faculty random');
-db.findPhoto('photo random');
+db.findPhoto('../images/dummy.jpg');
 db.findEvent('event random');
 
 module.exports = app;
