@@ -59,8 +59,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-db.findFaculty('faculty random');
-db.findPhoto('../images/dummy.jpg');
-db.findEvent('event random');
+db.deleteEvent('title');
 
 module.exports = app;

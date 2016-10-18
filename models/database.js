@@ -1,3 +1,7 @@
+/* Connects to the database
+  YOu still have to create the database manually however
+  Remember to edit the database conficugations to suit your computer sql credentials
+  */
     var Sequelize = require('sequelize');
     var connection = new Sequelize('sos_website', 'root', 'root'
     /*,
@@ -55,10 +59,11 @@
 
     connection.sync();
 
+    /*
+     * Adds a new event, faculty and photo urlencoded
+     */
   function newEvent(newTitle, newVenue, newTime, newDescription)
   {
-
-  //var newTitle, newVenue, newTime, newDescription;
     try
     {
       events.create
@@ -118,6 +123,10 @@
     }
   }
 
+  /* Finds data from the database and returns the required rows
+   * from the relevant tables in the database
+   */
+
   function findFaculty(memberName)
   {
     try
@@ -162,6 +171,18 @@
       console.log(e.message);
     }
   }
+
+  /*
+   *Deletes rows from the database for the various tables
+   */
+
+  function deleteEvent(eventTitle)
+  {
+    events.destroy
+    ({
+      where:{ title: eventTitle}
+    });
+  }
   module.exports =
   {
     newEvent: newEvent,
@@ -169,5 +190,6 @@
     newPhotos: newPhotos,
     findFaculty: findFaculty,
     findPhoto: findPhoto,
-    findEvent: findEvent
+    findEvent: findEvent,
+    deleteEvent: deleteEvent
   }
