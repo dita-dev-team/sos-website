@@ -142,14 +142,14 @@
     }
   }
 
-  function findPhoto(photoUrl)
+  function findEvent(eventTitle)
   {
     try
     {
-        photos.find
-        ({
-          where:{image_url: photoUrl}
-        });
+      events.find
+      ({
+        where:{title: eventTitle}
+      });
     }
     catch (e)
     {
@@ -157,13 +157,13 @@
     }
   }
 
-  function findEvent(eventTitle)
+  function findPhoto(photoUrl)
   {
     try
     {
-        events.find
+        photos.find
         ({
-          where:{title: eventTitle}
+          where:{image_url: photoUrl}
         });
     }
     catch (e)
@@ -183,6 +183,22 @@
       where:{ title: eventTitle}
     });
   }
+
+  function deleteFaculty(memberName)
+  {
+    faculty.destroy
+    ({
+      where:{facultyName: memberName}
+    });
+  }
+
+  function deletePhoto(photoUrl)
+  {
+    photos.destroy
+    ({
+      where:{image_url: photoUrl}
+    });
+  }
   module.exports =
   {
     newEvent: newEvent,
@@ -191,5 +207,7 @@
     findFaculty: findFaculty,
     findPhoto: findPhoto,
     findEvent: findEvent,
-    deleteEvent: deleteEvent
+    deleteEvent: deleteEvent,
+    deleteFaculty: deleteFaculty,
+    deletePhoto: deletePhoto
   }
