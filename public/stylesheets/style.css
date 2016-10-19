@@ -31,6 +31,10 @@ html, body {
 /*}*/
 
 /* Navbar customization */
+.nav {
+  font-size: 2.5vmin;
+}
+
 .navbar {
   background: none;
 }
@@ -118,4 +122,43 @@ html, body {
 .btn-circle:hover > .glyphicon {
   color: black;
 }
+
+/* About section */
+#about {
+  background-color: #11749e;
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#about h2 {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+#about .glyphicon {
+  background-color: #2e85aa;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 8vmin;
+  height: 18vmin;
+  line-height: 18vmin;
+  text-align: center;
+  vertical-align: middle;
+  width: 18vmin;
+  margin-bottom: 10px;
+}
+
+#about .motto {
+  font-size: 4vmin;
+}
+
+#about p {
+  font-size: 3vmin;
+}
+
 
