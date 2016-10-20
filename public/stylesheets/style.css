@@ -31,6 +31,10 @@ html, body {
 /*}*/
 
 /* Navbar customization */
+.nav {
+  font-size: 2.5vmin;
+}
+
 .navbar {
   background: none;
 }
@@ -119,3 +123,87 @@ html, body {
   color: black;
 }
 
+/* About section */
+#about {
+  background-color: #11749e;
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#about h2 {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+#about .glyphicon {
+  background-color: #2e85aa;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 8vmin;
+  height: 18vmin;
+  line-height: 18vmin;
+  text-align: center;
+  vertical-align: middle;
+  width: 18vmin;
+  margin-bottom: 10px;
+}
+
+#about .motto {
+  font-size: 4vmin;
+}
+
+#about p {
+  font-size: 3vmin;
+}
+
+#about-continued {
+  height: 100%;
+  width: 100%;
+
+}
+
+#about-continued .container {
+  width: 100%;
+  height: 100%;
+}
+
+#about-continued .container .row {
+  height: 50%;
+}
+
+.info1 {
+  height: 100%;
+  background-color: #222222;
+  color: #ffffff;
+  font-size: 2.5vmin;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+.image1 {
+  height: 100%;
+  background: url(../images/about1.jpg) no-repeat center center;
+}
+
+.image2 {
+  height: 100%;
+  background: url(../images/about2.jpg) no-repeat center center;
+}
+
+.info2 {
+  height: 100%;
+  background-color: #f3f3f3;
+  color: #222222;
+  font-size: 2.5vmin;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+.info2 h3 {
+  font-size: 2.5vmin;
+}
