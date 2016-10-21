@@ -108,6 +108,8 @@ html, body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
 .btn-circle:hover {
@@ -115,7 +117,8 @@ html, body {
 }
 
 .btn-circle > .glyphicon {
-  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
 }
 

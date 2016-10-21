@@ -19,18 +19,21 @@ html
         #navbar-collapse-main.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar.navbar-right
             li.active
-              a(href='#home') Home
+              a.page-scroll(href='#home') Home
             li
-              a(href='#about') About us
+              a.page-scroll(href='#about') About us
             li
-              a(href='#events') Clubs & events
+              a.page-scroll(href='#events') Clubs & events
             li
-              a(href='#programmes') Programmes
+              a.page-scroll(href='#programmes') Programmes
             li
-              a(href='#faculty') Faculty
+              a.page-scroll(href='#faculty') Faculty
             li
-              a(href='#contact') Contact us
+              a.page-scroll(href='#contact') Contact us
 
     block content
   script(src='libs/jquery/dist/jquery.min.js')
   script(src='libs/bootstrap/dist/js/bootstrap.min.js')
+  script(src='scripts/jquery.easing.min.js')
+  script(src='scripts/scrolling-nav.js')
+  script(src='scripts/script.js')
