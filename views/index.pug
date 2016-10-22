@@ -54,4 +54,18 @@ block content
 
     // sixth section - Contact us
     #contact
-
+        .container
+            h2.text-center We'd love to hear from you
+            .row.text-center
+                .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                    input#name(type='text', placeholder='name')
+                .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                    input#email(type='email', placeholder='email')
+                .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                    input#phone(type='text', placeholder='phone')
+            .row.text-center
+                .col-sm-12
+                    textarea#message(rows=8, placeholder='message')
+            .row.text-center
+                .col-sm-12
+                    button#submit.btn(type='button') submit

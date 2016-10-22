@@ -16,6 +16,13 @@ $('.navbar').on('activate.bs.scrollspy', function () {
                 'background-color': 'transparent'
             });
             break;
+        case 'contact':
+            $('.navbar-default').css('border-color', '#818181');
+            $('.nav.navbar-nav > .active > a').css({
+                'border-bottom-color': '#11749e',
+                'background-color': 'transparent'
+            });
+            break;
         default:
             $('.navbar-default').css('border-color', 'transparent');
             $('.nav.navbar-nav > .active > a').css('border-bottom-color', '#818181');
