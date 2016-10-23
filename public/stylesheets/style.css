@@ -225,6 +225,63 @@ html, body {
   font-size: 2.5vmin;
 }
 
+/* Events section */
+#events {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#events h2 {
+  font-size: 8vmin;
+  font-weight: bold;
+}
+
+#events h4 {
+  font-size: 4vmin;
+  font-weight: bold;
+
+}
+
+/* Programmes section */
+#programmes {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(../images/science8.jpg) no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* Faculty section */
+#faculty {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#faculty h2 {
+  font-size: 8vmin;
+  font-weight: bold;
+}
+
+#faculty h4 {
+  font-size: 4vmin;
+  font-weight: bold;
+
+}
+
 /* Contact section */
 #contact {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(../images/contact1.jpg) no-repeat center center fixed;
@@ -282,7 +339,7 @@ html, body {
 #contact button {
   background-color: #11749e;
   color: #ffffff;
-  border-radius: 0px;
+  border-radius: 0;
   width: 20vmin;
   height: 7vmin;
   font-size: large;
@@ -291,4 +348,9 @@ html, body {
 
 #contact button:hover {
   background-color: #11A1D2;
+}
+
+#footer {
+  height: 10%;
+  background-color: #222222;
 }

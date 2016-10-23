@@ -8,6 +8,7 @@ $('.navbar').on('activate.bs.scrollspy', function () {
                 'border-bottom-color': '#11749e',
                 'background-color': 'transparent'
             });
+            $('.nav.navbar-nav.navbar.navbar-right li a').css('color', '#ffffff');
             break;
         case 'about':
             $('.navbar-default').css('border-color', 'white');
@@ -15,6 +16,31 @@ $('.navbar').on('activate.bs.scrollspy', function () {
                 'border-bottom-color': '#ffffff',
                 'background-color': 'transparent'
             });
+            $('.nav.navbar-nav.navbar.navbar-right li a').css('color', '#ffffff');
+            break;
+        case 'events':
+            $('.navbar-default').css('border-color', 'transparent');
+            $('.nav.navbar-nav > .active > a').css({
+                'border-bottom-color': '#818181',
+                'background-color': 'transparent'
+            });
+            $('.nav.navbar-nav.navbar.navbar-right li a').css('color', '#000000');
+            break;
+        case 'programmes':
+            $('.navbar-default').css('border-color', '#818181');
+            $('.nav.navbar-nav > .active > a').css({
+                'border-bottom-color': '#11749e',
+                'background-color': 'transparent'
+            });
+            $('.nav.navbar-nav.navbar.navbar-right li a').css('color', '#ffffff');
+            break;
+        case 'faculty':
+            $('.navbar-default').css('border-color', 'transparent');
+            $('.nav.navbar-nav > .active > a').css({
+                'border-bottom-color': '#818181',
+                'background-color': 'transparent'
+            });
+            $('.nav.navbar-nav.navbar.navbar-right li a').css('color', '#000000');
             break;
         case 'contact':
             $('.navbar-default').css('border-color', '#818181');
@@ -22,6 +48,7 @@ $('.navbar').on('activate.bs.scrollspy', function () {
                 'border-bottom-color': '#11749e',
                 'background-color': 'transparent'
             });
+            $('.nav.navbar-nav.navbar.navbar-right li a').css('color', '#ffffff');
             break;
         default:
             $('.navbar-default').css('border-color', 'transparent');

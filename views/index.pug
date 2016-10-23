@@ -44,28 +44,41 @@ block content
                     h3 DEAN, SCHOOL OF SCIENCE, ENGINEERING  & HEALTH
 
     // third section - Clubs and events
-    #events
+    #events.events
+        .container
+            h2.text-center Clubs and events
+            .row
+                .col-sm-12
+                    h4.text-center Get updated on the latest happenings in the school
+
 
     // fourth section - Clubs and events
     #programmes
 
     // fifth section - Faculty
     #faculty
-
+        .container
+            h2.text-center Faculty
+            .row
+                .col-sm-12
+                    h4.text-center We brag of the best in their respective fields
     // sixth section - Contact us
     #contact
         .container
             h2.text-center We'd love to hear from you
-            .row.text-center
-                .col-sm-12.col-xs-12.col-md-4.col-lg-4
-                    input#name(type='text', placeholder='name')
-                .col-sm-12.col-xs-12.col-md-4.col-lg-4
-                    input#email(type='email', placeholder='email')
-                .col-sm-12.col-xs-12.col-md-4.col-lg-4
-                    input#phone(type='text', placeholder='phone')
-            .row.text-center
-                .col-sm-12
-                    textarea#message(rows=8, placeholder='message')
-            .row.text-center
-                .col-sm-12
-                    button#submit.btn(type='button') submit
+            form#contact-form.contact-form(role='form', action='', method='post')
+                .row.text-center.form-group
+                    .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                        input#name.form-control(type='text', placeholder='name', required)
+                    .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                        input#email(type='email', placeholder='email', required)
+                    .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                        input#phone(type='text', placeholder='phone', required)
+                .row.text-center.form-group
+                    .col-sm-12
+                        textarea#message(rows=8, placeholder='message', required)
+                .row.text-center.form-group
+                    .col-sm-12
+                        button#submit.btn(type='submit') submit
+    // footer section
+    #footer
