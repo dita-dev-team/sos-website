@@ -260,6 +260,35 @@ html, body {
   background-size: cover;
 }
 
+#programmes .container {
+  display: table-cell;
+  padding: 80px;
+}
+
+#programmes .programmes-list {
+  border-left: 5px solid #a7a78f;
+}
+
+#programmes h2 {
+  color: #ffffff;
+  font-size: 5vmin;
+  font-weight: bolder;
+}
+
+#programmes li {
+  color: #ffffff;
+  font-size: 4vmin;
+  font-weight: 500;
+}
+
+#programmes ul {
+  list-style-type: none;
+}
+
+#programmes li:before {
+  content: "-";
+}
+
 /* Faculty section */
 #faculty {
   background-color: #ffffff;
