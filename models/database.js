@@ -127,14 +127,14 @@
    * from the relevant tables in the database
    */
 
-  function findFaculty(memberName)
+function findFaculty(memberName, callback)
   {
     try
     {
         faculty.find
         ({
           where:{facultyName: memberName}
-        });
+        }).then(callback);
     }
     catch (e)
     {
