@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('../models/database');
 
-db.findFaculty('hello', function (faculty) {
+db.findFaculty('new name', function (faculty) {
   console.log(faculty);
 });
 
