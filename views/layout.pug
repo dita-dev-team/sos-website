@@ -30,15 +30,11 @@ html
               a.page-scroll(href='#faculty') Faculty
             li
               a.page-scroll(href='#contact') Contact us
-              li
-                a.page-scroll(href='#map') Daystar Map
 
     block content
   script(src='libs/jquery/dist/jquery.min.js')
   script(src='libs/bootstrap/dist/js/bootstrap.min.js')
   script(src='scripts/jquery.easing.min.js')
   script(src='scripts/scrolling-nav.js')
+  script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry&key=AIzaSyAHSZHfNanEI64wMO0M6URymVBIGOh3wSA&callback=initMap')
   script(src='scripts/script.js')
-  script(src='https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry&key=AIzaSyAHSZHfNanEI64wMO0M6URymVBIGOh3wSA&callback=initMap'
-  )
-  script(src='scripts/maps.js')
