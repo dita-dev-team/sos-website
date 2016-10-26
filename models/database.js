@@ -261,5 +261,5 @@
     deletePhoto: deletePhoto,
     updateEvent: updateEvent,
     updateFaculty: updateFaculty,
-    updatePhoto: updatePhoto
+    updatePhoto: updatePhoto,
   }
