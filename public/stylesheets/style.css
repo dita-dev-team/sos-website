@@ -379,6 +379,10 @@ html, body {
   background-color: #11A1D2;
 }
 
+#map {
+    height: 40%
+}
+
 #footer {
   height: 10%;
   background-color: #222222;
