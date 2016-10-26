@@ -29,7 +29,7 @@ function initMap() {
         // Push the marker to our array of markers.
         markers.push(marker);
         // Create an onclick event to open an infowindow at each marker.
-        marker.addListener('click', function () {
+        marker.addListener('click', function() {
             populateInfoWindow(this, largeInfowindow);
         });
         bounds.extend(markers[i].position);
@@ -47,7 +47,7 @@ function populateInfoWindow(marker, infowindow) {
         infowindow.setContent('<div>' + marker.title + '</div>');
         infowindow.open(map, marker);
         // Make sure the marker property is cleared if the infowindow is closed.
-        infowindow.addListener('closeclick', function () {
+        infowindow.addListener('closeclick',function(){
             infowindow.setMarker(null);
         });
     }

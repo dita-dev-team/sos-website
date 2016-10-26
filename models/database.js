@@ -1,17 +1,15 @@
-/* Connects to the database
-  YOu still have to create the database manually however
-  Remember to edit the database conficugations to suit your computer sql credentials
-  */
-    var Sequelize = require('sequelize');
-    var connection = new Sequelize('sos_website', 'root', 'root'
-    /*,
-    {
-      //this is for when we host this website.
-      host: 'localhost',
-      //Kipesh Should uncomment this line since he wants to use postgres
-      dialect: 'postgres'
-    }
-    */);
+var Sequelize = require('sequelize');
+
+var connection = new Sequelize('sos_website', 'tom', 'tom'
+
+,
+{
+  //this is for when we host this website.
+  host: 'localhost',
+  //Kipesh Should uncomment this line since he wants to use postgres
+  dialect: 'postgres'
+}
+);
 
     var events = connection.define('events',
     {
