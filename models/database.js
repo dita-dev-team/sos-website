@@ -262,4 +262,7 @@
     updateEvent: updateEvent,
     updateFaculty: updateFaculty,
     updatePhoto: updatePhoto,
+    Faculty: faculty,
+    Events: events,
+    Photos: photos
   }

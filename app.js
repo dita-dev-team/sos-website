@@ -8,9 +8,6 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-//models
-var db = require('./models/database');
-
 var app = express();
 
 // view engine setup
@@ -60,4 +57,4 @@ app.use(function(err, req, res, next) {
 });
 
 
-module.exports = app, db;
+module.exports = app;
