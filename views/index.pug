@@ -1,27 +1,95 @@
 extends layout
 
 block content
-  // first section - Home
-  #home.home
-    .content
-      img.logo(src='images/daystar.png')
-      h1 School of
-      h3 science, engineering and health
-      button.btn.btn-circle(title='Scroll down')
-        i.glyphicon.glyphicon-chevron-down
+    // first section - Home
+    #home.home
+        .content
+            img.logo(src='images/daystar.png')
+            h1 School of
+            h3 science, engineering and health
+            a.btn.btn-circle.page-scroll(title='Scroll down', href='#about')
+                i.glyphicon.glyphicon-chevron-down
 
-  // second section - About
-  #about
+    // second section - About
+    #about.about
+        .container
+            h2.text-center About Us
+            .row.text-center
+                .col-sm-6.col-xs-6.col-md-3.col-lg-3
+                    i.glyphicon.glyphicon-education
+                    p  The School of Science, Engineering and Health at Daystar University was established in the year 2010.
+                .col-sm-6.col-xs-6.col-md-3.col-lg-3
+                    i.glyphicon
+                    p.motto Our motto is, "Science for Service".
+                .col-sm-6.col-xs-6.col-md-3.col-lg-3
+                    i.glyphicon
+                    p We are motivated by our conviction to provide high quality education that encourages life-long learning and service to the Church and society.
+                .col-sm-6.col-xs-6.col-md-3.col-lg-3
+                    i.glyphicon
+                    p We anticipate the fulfillment of God's will in our lives and the lives of the clientele through the services that we offer as science practitioners.
 
-  // third section - Clubs and events
-  #events
+    #about-continued.about-continued
+        .container
+            .row
+                .col-sm-12.col-xs-12.col-md-6.col-lg-6.info1.text-justify
+                    p We hope to contribute to the eradication of extreme poverty and hunger, reduce child mortality, and ensure environmental sustainability as spelt in Millenium Development Goals (MDGs) by offering a range of programmes in Nursing, Environmental Health, Information Technology and Acturial Science among others. In so doing we will contribute to the Government of Kenya's Vision 2030 which aims at making Kenya an industrialized middle income country with a high quality of life by the year 2030.
+                .col-sm-12.col-xs-12.col-md-6.col-lg-6.image1
+            .row
+                .col-sm-12.col-xs-12.col-md-6.col-lg-6.image2
+                .col-sm-12.col-xs-12.col-md-6.col-lg-6.info2
+                    p Our programmes are tailored to provide learning and a Christ-centered approach and contribute to the achievement of the vision and mission of Daystar University.
+                    p Daystar University has provided state-of-art laboratories and library resources that wil be used for teaching and research. In recognition of the fact that research is a prerequisite for economic development, the School is focused on undertaking research projects with emphasis
+                    h3 WELCOME ALL!
+                    h3 DR. MARTHA KIARIE
+                    h3 DEAN, SCHOOL OF SCIENCE, ENGINEERING  & HEALTH
 
-  // fourth section - Clubs and events
-  #programmes
+    // third section - Clubs and events
+    #events.events
+        .container
+            h2.text-center Clubs and events
+            .row
+                .col-sm-12
+                    h4.text-center Get updated on the latest happenings in the school
 
-  // fifth section - Faculty
-  #faculty
 
-  // sixth section - Contact us
-  #contact
-
+    // fourth section - Clubs and events
+    #programmes
+        .container
+            h2 Programmes offered
+            .row
+                .col-sm-12.programmes-list
+                    ul
+                        li Nursing (Direct entry, Diploma to BscN)
+                        li Applied Computer Science
+                        li Physics
+                        li Mathematics (Financial Mathematics, Pure/Applied Mathematics and Statistics)
+                        li Environmental Health
+                        li Acturial Science
+                        li Biomedical Science
+    // fifth section - Faculty
+    #faculty
+        .container
+            h2.text-center Faculty
+            .row
+                .col-sm-12
+                    h4.text-center We brag of the best in their respective fields
+    // sixth section - Contact us
+    #contact
+        .container
+            h2.text-center We'd love to hear from you
+            form#contact-form.contact-form(role='form', action='', method='post')
+                .row.text-center.form-group
+                    .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                        input#name.form-control(type='text', placeholder='name', required)
+                    .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                        input#email(type='email', placeholder='email', required)
+                    .col-sm-12.col-xs-12.col-md-4.col-lg-4
+                        input#phone(type='text', placeholder='phone', required)
+                .row.text-center.form-group
+                    .col-sm-12
+                        textarea#message(rows=8, placeholder='message', required)
+                .row.text-center.form-group
+                    .col-sm-12
+                        button#submit.btn(type='submit') submit
+    // footer section
+    #footer

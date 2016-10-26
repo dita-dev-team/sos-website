@@ -202,17 +202,17 @@ var connection = new Sequelize('sos_website', 'tom', 'tom'
  * Update functions for editing data
  * on the various tables
  * the basics are,
- * UPDATE events SET title = updateTitle WHERE title = currentTitle
+ * UPDATE events SET title = newTitle WHERE title = currentTitle
  * as in the below function.
  * Will add later function overloads for the below function
  */
 
 
-  function updateEvent(updateTitle, currentTitle)
+  function updateEvent(newTitle, currentTitle)
   {
     events.update
     ({
-      title: updateTitle
+      title: newTitle
     },
     {
       where:{ title: currentTitle}
@@ -243,6 +243,7 @@ var connection = new Sequelize('sos_website', 'tom', 'tom'
 
   /*
    * Exports functions so that other files and classes can use them
+   * for function calls
    */
 
   module.exports =

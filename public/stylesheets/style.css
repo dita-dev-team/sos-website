@@ -31,6 +31,10 @@ html, body {
 /*}*/
 
 /* Navbar customization */
+.nav {
+  font-size: 2.5vmin;
+}
+
 .navbar {
   background: none;
 }
@@ -104,6 +108,8 @@ html, body {
   right: 0;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
 .btn-circle:hover {
@@ -111,7 +117,8 @@ html, body {
 }
 
 .btn-circle > .glyphicon {
-  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
 }
 
@@ -119,3 +126,260 @@ html, body {
   color: black;
 }
 
+/* About section */
+#about {
+  background-color: #11749e;
+  color: #ffffff;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#about .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about .row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#about h2 {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+#about .glyphicon {
+  background-color: #2e85aa;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 8vmin;
+  height: 18vmin;
+  line-height: 18vmin;
+  text-align: center;
+  vertical-align: middle;
+  width: 18vmin;
+  margin-bottom: 10px;
+}
+
+#about .motto {
+  font-size: 4vmin;
+}
+
+#about p {
+  font-size: 3vmin;
+}
+
+#about-continued {
+  height: 100%;
+  width: 100%;
+
+}
+
+#about-continued .container {
+  width: 100%;
+  height: 100%;
+}
+
+#about-continued .container .row {
+  height: 50%;
+}
+
+.info1 {
+  height: 100%;
+  background-color: #222222;
+  color: #ffffff;
+  font-size: 2.5vmin;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+.image1 {
+  height: 100%;
+  background: url(../images/about1.jpg) no-repeat center center;
+}
+
+.image2 {
+  height: 100%;
+  background: url(../images/about2.jpg) no-repeat center center;
+}
+
+.info2 {
+  height: 100%;
+  background-color: #f3f3f3;
+  color: #222222;
+  font-size: 2.5vmin;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+.info2 h3 {
+  font-size: 2.5vmin;
+}
+
+/* Events section */
+#events {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#events h2 {
+  font-size: 8vmin;
+  font-weight: bold;
+}
+
+#events h4 {
+  font-size: 4vmin;
+  font-weight: bold;
+
+}
+
+/* Programmes section */
+#programmes {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(../images/science8.jpg) no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#programmes .container {
+  display: table-cell;
+  padding: 80px;
+}
+
+#programmes .programmes-list {
+  border-left: 5px solid #a7a78f;
+}
+
+#programmes h2 {
+  color: #ffffff;
+  font-size: 5vmin;
+  font-weight: bolder;
+}
+
+#programmes li {
+  color: #ffffff;
+  font-size: 4vmin;
+  font-weight: 500;
+}
+
+#programmes ul {
+  list-style-type: none;
+}
+
+#programmes li:before {
+  content: "-";
+}
+
+/* Faculty section */
+#faculty {
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#faculty h2 {
+  font-size: 8vmin;
+  font-weight: bold;
+}
+
+#faculty h4 {
+  font-size: 4vmin;
+  font-weight: bold;
+
+}
+
+/* Contact section */
+#contact {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(../images/contact1.jpg) no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#contact .container {
+  width: 70%;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#contact .container h2 {
+  font-size: 5vmin;
+  margin-bottom: 6vh;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#contact .container .row {
+  width: 70%;
+  margin: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact input {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 15px;
+  width: 100%;
+  height: 6vmin;
+  font-size: medium;
+  margin: 5px;
+}
+
+#contact textarea {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 15px;
+  width: 100%;
+  font-size: medium;
+}
+
+#contact button {
+  background-color: #11749e;
+  color: #ffffff;
+  border-radius: 0;
+  width: 20vmin;
+  height: 7vmin;
+  font-size: large;
+  padding: 1px;
+}
+
+#contact button:hover {
+  background-color: #11A1D2;
+}
+
+#footer {
+  height: 10%;
+  background-color: #222222;
+}
