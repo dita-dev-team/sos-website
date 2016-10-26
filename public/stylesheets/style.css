@@ -378,7 +378,10 @@ html, body {
 #contact button:hover {
   background-color: #11A1D2;
 }
-
+/*Map*/
+#map {
+  height: 400px;
+}
 #footer {
   height: 10%;
   background-color: #222222;
