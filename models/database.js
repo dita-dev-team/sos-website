@@ -117,7 +117,7 @@ var connection = new Sequelize('sos_website', 'root', 'root'
    * from the relevant tables in the database
    */
 
-function findFaculty(memberName, callback)
+  function findFaculty(memberName, callback)
   {
     try
     {
@@ -132,14 +132,14 @@ function findFaculty(memberName, callback)
     }
   }
 
-  function findEvent(eventTitle)
+  function findEvent(eventTitle, callback)
   {
     try
     {
       events.find
       ({
         where:{title: eventTitle}
-      });
+      }).then(callback);
     }
     catch (e)
     {
@@ -154,7 +154,7 @@ function findFaculty(memberName, callback)
         photos.find
         ({
           where:{image_url: photoUrl}
-        });
+        }).then(callback);
     }
     catch (e)
     {
