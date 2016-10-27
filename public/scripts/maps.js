@@ -47,9 +47,15 @@ function initMap() {
     // These are the real estate listings that will be shown to the user.
     // Normally we'd have these in a database instead.
     var locations = [
-        {title: 'Daystar University Athi River', location: {lat: -1.44460, lng: 37.04959}},
-        {title: 'Daystar University Valley Road', location: {lat: -1.29718, lng: 36.80276}}
+        {title: 'Daystar University' ,area:' Athi River' ,students:12000, location: {lat: -1.44460, lng: 37.04959}},
+        {title: 'Daystar University' ,area:' Valley Road',students:8000, location: {lat: -1.29718, lng: 36.80276}}
     ];
+    // Style the markers a bit. This will be our listing marker icon.
+    var defaultIcon = makeMarkerIcon('0091ff');
+    // Create a "highlighted location" marker color for when the user
+    // mouses over the marker.
+    var highlightedIcon = makeMarkerIcon('FFFF24');
+
     var largeInfowindow = new google.maps.InfoWindow();
     var bounds = new google.maps.LatLngBounds();
     // The following group uses the location array to create an array of markers on initialize.
@@ -57,19 +63,31 @@ function initMap() {
         // Get the position from the location array.
         var position = locations[i].location;
         var title = locations[i].title;
+        var area = locations[i].area;
+        var students = locations[i].students;
         // Create a marker per location, and put into markers array.
         var marker = new google.maps.Marker({
             map: map,
             position: position,
             title: title,
+            area:area,
+            students:students,
             animation: google.maps.Animation.DROP,
             id: i
         });
         // Push the marker to our array of markers.
         markers.push(marker);
         // Create an onclick event to open an infowindow at each marker.
-        marker.addListener('click', function() {
+        marker.addListener('click', function () {
             populateInfoWindow(this, largeInfowindow);
+        });
+        // Two event listeners - one for mouseover, one for mouseout,
+        // to change the colors back and forth.
+        marker.addListener('mouseover', function() {
+            this.setIcon(highlightedIcon);
+        });
+        marker.addListener('mouseout', function() {
+            this.setIcon(defaultIcon);
         });
         bounds.extend(markers[i].position);
     }
@@ -83,14 +101,23 @@ function populateInfoWindow(marker, infowindow) {
     // Check to make sure the infowindow is not already opened on this marker.
     if (infowindow.marker != marker) {
         infowindow.marker = marker;
-        infowindow.setContent('<div>' + marker.title + '</div>');
+        infowindow.setContent('<div><strong>' + marker.title + '</strong><br>' + marker.area +'<br><p><strong></strong>'+marker.students+' Students</p></div>');
         infowindow.open(map, marker);
         // Make sure the marker property is cleared if the infowindow is closed.
-        infowindow.addListener('closeclick',function(){
+        infowindow.addListener('closeclick', function () {
             infowindow.setMarker(null);
         });
     }
 
 
-
+}
+function makeMarkerIcon(markerColor) {
+    var markerImage = new google.maps.MarkerImage(
+        'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
+        '|40|_|%E2%80%A2',
+        new google.maps.Size(21, 34),
+        new google.maps.Point(0, 0),
+        new google.maps.Point(10, 34),
+        new google.maps.Size(21,34));
+    return markerImage;
 }
