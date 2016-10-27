@@ -380,11 +380,7 @@ html, body {
 }
 /*Map*/
 #map {
-<<<<<<< HEAD
-    height: 50%;
-=======
-  height: 250px;
->>>>>>> 59f6111f336747e9008be57a077405ddf3e1d7b0
+height: 250px;
 }
 #footer {
   height: 10%;

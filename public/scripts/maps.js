@@ -26,16 +26,23 @@ function initMap() {
     }, {"featureType": "road", "elementType": "geometry", "stylers": [{"color": "#454545"}]}];
     // Constructor creates a new map - only center and zoom are required.
     map = new google.maps.Map(document.getElementById('map'), {
-<<<<<<< HEAD
-        center: {lng: 37.0452371, lat: -1.4417402},
-        zoom: 13
-=======
         center: {lat: -1.439590, lng: 37.046964},
-        zoom: 13,
-        styles: styles,
-        mapTypeControl: false
->>>>>>> 59f6111f336747e9008be57a077405ddf3e1d7b0
+        zoom: 14,
+        styles:styles,
+        mapTypeId: "OSM",
+        mapTypeControl: false,
+        streetViewControl: false
     });
+
+    //Define OSM map type pointing at the OpenStreetMap tile server
+    map.mapTypes.set("OSM", new google.maps.ImageMapType({
+        getTileUrl: function(coord, zoom) {
+            return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
+        },
+        tileSize: new google.maps.Size(256, 256),
+        name: "OpenStreetMap",
+        maxZoom: 18
+    }));
     // These are the real estate listings that will be shown to the user.
     // Normally we'd have these in a database instead.
     var locations = [
@@ -99,8 +106,6 @@ function populateInfoWindow(marker, infowindow) {
         });
     }
 }
-<<<<<<< HEAD
-=======
 // This function will loop through the markers array and display them all.
 function showListings() {
     var bounds = new google.maps.LatLngBounds();
@@ -130,4 +135,3 @@ function makeMarkerIcon(markerColor) {
         new google.maps.Size(21,34));
     return markerImage;
 }
->>>>>>> 59f6111f336747e9008be57a077405ddf3e1d7b0
