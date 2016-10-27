@@ -52,3 +52,8 @@ function populateInfoWindow(marker, infowindow) {
         });
     }
 }
+
+module.exports =
+{
+  initMap: initMap
+}
