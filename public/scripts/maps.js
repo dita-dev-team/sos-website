@@ -5,7 +5,7 @@ var locations = [];
 function initMap() {
     // Constructor creates a new map - only center and zoom are required.
     map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 37.0452371, lng: -1.4417402},
+        center: {lng: 37.0452371, lat: -1.4417402},
         zoom: 13
     });
     // These are the real estate listings that will be shown to the user.
@@ -51,9 +51,4 @@ function populateInfoWindow(marker, infowindow) {
             infowindow.setMarker(null);
         });
     }
-}
-
-module.exports =
-{
-  initMap: initMap
 }
