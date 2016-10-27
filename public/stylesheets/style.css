@@ -380,7 +380,7 @@ html, body {
 }
 /*Map*/
 #map {
-  height: 400px;
+    height: 50%;
 }
 #footer {
   height: 10%;

@@ -1,14 +1,6 @@
 var Sequelize = require('sequelize');
 
-var connection = new Sequelize('sos_website', 'tom', 'tom'
-
-,
-{
-  //this is for when we host this website.
-  host: 'localhost',
-  //Kipesh Should uncomment this line since he wants to use postgres
-  dialect: 'postgres'
-}
+var connection = new Sequelize('sos_website', 'root', 'root'
 );
 
     var events = connection.define('events',
