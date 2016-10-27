@@ -117,7 +117,7 @@ var connection = new Sequelize('sos_website', 'root', 'root'
    * from the relevant tables in the database
    */
 
-  function findFaculty(memberName, callback)
+function findFaculty(memberName, callback)
   {
     try
     {
@@ -132,7 +132,7 @@ var connection = new Sequelize('sos_website', 'root', 'root'
     }
   }
 
-  function findEvent(eventTitle, callback)
+function findEvent(eventTitle, callback)
   {
     try
     {
