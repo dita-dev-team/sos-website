@@ -28,7 +28,7 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -1.439590, lng: 37.046964},
         zoom: 14,
-        styles:styles,
+        styles: styles,
         mapTypeId: "OSM",
         mapTypeControl: false,
         streetViewControl: false
@@ -36,7 +36,7 @@ function initMap() {
 
     //Define OSM map type pointing at the OpenStreetMap tile server
     map.mapTypes.set("OSM", new google.maps.ImageMapType({
-        getTileUrl: function(coord, zoom) {
+        getTileUrl: function (coord, zoom) {
             return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
         },
         tileSize: new google.maps.Size(256, 256),
@@ -82,10 +82,10 @@ function initMap() {
         });
         // Two event listeners - one for mouseover, one for mouseout,
         // to change the colors back and forth.
-        marker.addListener('mouseover', function() {
+        marker.addListener('mouseover', function () {
             this.setIcon(highlightedIcon);
         });
-        marker.addListener('mouseout', function() {
+        marker.addListener('mouseout', function () {
             this.setIcon(defaultIcon);
         });
     }
@@ -101,7 +101,7 @@ function populateInfoWindow(marker, infowindow) {
         infowindow.setContent('<div>' + marker.title + '</div>');
         infowindow.open(map, marker);
         // Make sure the marker property is cleared if the infowindow is closed.
-        infowindow.addListener('closeclick', function() {
+        infowindow.addListener('closeclick', function () {
             infowindow.marker = null;
         });
     }
@@ -127,11 +127,11 @@ function hideListings() {
 // of 0, 0 and be anchored at 10, 34).
 function makeMarkerIcon(markerColor) {
     var markerImage = new google.maps.MarkerImage(
-        'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
+        'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
         '|40|_|%E2%80%A2',
         new google.maps.Size(21, 34),
         new google.maps.Point(0, 0),
         new google.maps.Point(10, 34),
-        new google.maps.Size(21,34));
+        new google.maps.Size(21, 34));
     return markerImage;
 }
