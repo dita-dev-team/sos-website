@@ -1,194 +1,165 @@
-var Sequelize = require('sequelize');
+var database = require('./init');
 
-var connection = new Sequelize('sos_website', 'root', 'root'
-);
+//var connection = new Sequelize('sos_website', 'root', 'root'
+//);
 
-    var events = connection.define('events',
+var Sequelize = database.Sequelize;
+var connection = database.sequelize;
+var events = connection.define('events',
     {
-      title:
-      {
-        type: Sequelize.STRING,
-        allowNull:false,
-        validate:{notEmpty: true},
-        unique:true
-      },
-      venue:{type: Sequelize.STRING},
-      time:{type: Sequelize.DATE},
-      description:{type: Sequelize.TEXT}
+        title: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {notEmpty: true},
+            unique: true
+        },
+        venue: {type: Sequelize.STRING},
+        time: {type: Sequelize.DATE},
+        description: {type: Sequelize.TEXT},
+        image: {type: Sequelize.STRING}
     });
 
-    var faculty = connection.define('faculty',
+var faculty = connection.define('faculty',
     {
-      facultyName:
-      {
-        type: Sequelize.STRING,
-        allowNull: false,
-        validate:{notEmpty: true},
-        unique: true
+        facultyName: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {notEmpty: true},
+            unique: true
 
-      },
-      department:
-      {
-        type: Sequelize.STRING,
-        allowNull: false,
-        validate: {notEmpty: true}
-      },
-      position:
-      {
-        type: Sequelize.STRING,
-        allowNull: false,
-        validate: {notEmpty: true}
-      },
-      image_url:{type: Sequelize.TEXT}
+        },
+        department: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {notEmpty: true}
+        },
+        position: {
+            type: Sequelize.STRING,
+            allowNull: false,
+            validate: {notEmpty: true}
+        },
+        image_url: {type: Sequelize.TEXT}
     });
 
-    var photos = connection.define('photo_urls',
+var photos = connection.define('photo_urls',
     {
-      image_url:{type: Sequelize.TEXT}
+        image_url: {type: Sequelize.TEXT}
     });
 
-    connection.sync();
+connection.sync();
 
-    /*
-     * Adds a new event, faculty and photo urlencoded
-     */
-  function newEvent(newTitle, newVenue, newTime, newDescription)
-  {
-    try
-    {
-      events.create
-      ({
+/*
+ * Adds a new event, faculty and photo urlencoded
+ */
+function newEvent(newTitle, newVenue, newTime, newDescription, newImage) {
+    events.create({
         title: newTitle,
         venue: newVenue,
         time: newTime,
-        description: newDescription
-      }).then
-      (function(err)
-      {
+        description: newDescription,
+        image: newImage
+    }).then(function () {
         console.log("event saved");
-      });
+    }).catch(function (err) {
+        console.log(err.message);
+    });
 
+}
+
+function newFaculty(newName, newDepartment, newPosition) {
+    try {
+        faculty.create
+        ({
+            facultyName: newName,
+            department: newDepartment,
+            position: newPosition
+        }).then(function (err) {
+            console.log("faculty member saved");
+        });
     }
-    catch (e)
-    {
+    catch (e) {
         console.log(e.message);
     }
-  }
+}
 
-  function newFaculty(newName, newDepartment, newPosition)
-  {
-    try
-    {
-      faculty.create
-      ({
-        facultyName: newName,
-        department: newDepartment,
-        position: newPosition
-      }).then(function(err)
-      {
-        console.log("faculty member saved");
-      });
+function newPhotos(newImageUrl) {
+    try {
+        photos.create
+        ({
+            image_url: newImageUrl
+        }).then(function (err) {
+            console.log("Image Url Saved");
+        });
     }
-    catch (e)
-    {
-      console.log(e.message);
+    catch (e) {
+        console.log(e.message);
     }
-  }
+}
 
-  function newPhotos(newImageUrl)
-  {
-    try
-    {
-      photos.create
-      ({
-        image_url: newImageUrl
-      }).then(function(err)
-      {
-        console.log("Image Url Saved");
-      });
-    }
-    catch (e)
-    {
-      console.log(e.message);
-    }
-  }
+/* Finds data from the database and returns the required rows
+ * from the relevant tables in the database
+ */
 
-  /* Finds data from the database and returns the required rows
-   * from the relevant tables in the database
-   */
-
-function findFaculty(memberName, callback)
-  {
-    try
-    {
+function findFaculty(memberName, callback) {
+    try {
         faculty.find
         ({
-          where:{facultyName: memberName}
+            where: {facultyName: memberName}
         }).then(callback);
     }
-    catch (e)
-    {
-      console.log(e.message);
+    catch (e) {
+        console.log(e.message);
     }
-  }
+}
 
-function findEvent(eventTitle, callback)
-  {
-    try
-    {
-      events.find
-      ({
-        where:{title: eventTitle}
-      }).then(callback);
+function findEvent(eventTitle, callback) {
+    try {
+        events.find
+        ({
+            where: {title: eventTitle}
+        }).then(callback);
     }
-    catch (e)
-    {
-      console.log(e.message);
+    catch (e) {
+        console.log(e.message);
     }
-  }
+}
 
-  function findPhoto(photoUrl)
-  {
-    try
-    {
+function findPhoto(photoUrl) {
+    try {
         photos.find
         ({
-          where:{image_url: photoUrl}
+            where: {image_url: photoUrl}
         }).then(callback);
     }
-    catch (e)
-    {
-      console.log(e.message);
+    catch (e) {
+        console.log(e.message);
     }
-  }
+}
 
-  /*
-   *Deletes rows from the database for the various tables
-   */
+/*
+ *Deletes rows from the database for the various tables
+ */
 
-  function deleteEvent(eventTitle)
-  {
+function deleteEvent(eventTitle) {
     events.destroy
     ({
-      where:{ title: eventTitle}
+        where: {title: eventTitle}
     });
-  }
+}
 
-  function deleteFaculty(memberName)
-  {
+function deleteFaculty(memberName) {
     faculty.destroy
     ({
-      where:{facultyName: memberName}
+        where: {facultyName: memberName}
     });
-  }
+}
 
-  function deletePhoto(photoUrl)
-  {
+function deletePhoto(photoUrl) {
     photos.destroy
     ({
-      where:{image_url: photoUrl}
+        where: {image_url: photoUrl}
     });
-  }
+}
 
 /*
  * Update functions for editing data
@@ -200,46 +171,43 @@ function findEvent(eventTitle, callback)
  */
 
 
-  function updateEvent(newTitle, currentTitle)
-  {
+function updateEvent(newTitle, currentTitle) {
     events.update
     ({
-      title: newTitle
-    },
-    {
-      where:{ title: currentTitle}
-    });
-  }
+            title: newTitle
+        },
+        {
+            where: {title: currentTitle}
+        });
+}
 
-  function updateFaculty(newFacultyName, currentFacultyName)
-  {
+function updateFaculty(newFacultyName, currentFacultyName) {
     faculty.update
     ({
-        facultyName: newFacultyName
-    },
-    {
-      where: {facultyName: currentFacultyName}
-    });
-  }
+            facultyName: newFacultyName
+        },
+        {
+            where: {facultyName: currentFacultyName}
+        });
+}
 
-  function updatePhoto(newPhotoUrl, currentPhotoUrl)
-  {
+function updatePhoto(newPhotoUrl, currentPhotoUrl) {
     photos.update
     ({
-      image_url: newPhotoUrl
-    },
-    {
-      where: {image_url: currentPhotoUrl}
-    });
-  };
+            image_url: newPhotoUrl
+        },
+        {
+            where: {image_url: currentPhotoUrl}
+        });
+};
 
-  /*
-   * Exports functions so that other files and classes can use them
-   * for function calls
-   */
+/*
+ * Exports functions so that other files and classes can use them
+ * for function calls
+ */
 
-  module.exports =
-  {
+module.exports =
+{
     newEvent: newEvent,
     newFaculty: newFaculty,
     newPhotos: newPhotos,
@@ -255,4 +223,4 @@ function findEvent(eventTitle, callback)
     Faculty: faculty,
     Events: events,
     Photos: photos
-  }
+}

@@ -5,13 +5,17 @@ var db = require('../models/database');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  db.Events.findAll().then(function (events) {
-    if (events) {
+  db.Events.findAll({
+    order: 'time DESC',
+    limit: 4
+  }).then(function (events) {
+    if (events.length > 0) {
       console.log('Events found');
+      res.render('index', {title: 'School of Science', events: events});
     } else {
       console.log('No events found');
+      res.render('index', {title: 'School of Science'});
     }
-    res.render('index', {title: 'School of Science'});
   });
 
 });
