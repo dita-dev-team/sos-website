@@ -53,7 +53,10 @@ block content
             if events
                 .row
                     each event in events
-                        .col-sm-3
+                        .col-sm-6.col-md-3.event
+                            img.text-center.hidden-sm.hidden-xs(src=event.image)
+                            h4.text-center=event.title
+                            p.text-center=event.description
 
 
 
