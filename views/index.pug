@@ -52,11 +52,32 @@ block content
                     h4.text-center Get updated on the latest happenings in the school
             if events
                 .row
-                    each event in events
-                        .col-sm-6.col-md-3.event
-                            img.text-center.hidden-sm.hidden-xs(src=event.image)
-                            h4.text-center=event.title
-                            p.text-center=event.description
+                    if events.length == 4
+                        each event in events
+                            .col-sm-6.col-md-3.event
+                                img.text-center.hidden-sm.hidden-xs(src=event.image)
+                                h4.text-center=event.title
+                                p.text-center=event.description
+                    else if events.length == 3
+                        each event in events
+                            .col-sm-6.col-md-4.event
+                                img.text-center.hidden-sm.hidden-xs(src=event.image)
+                                h4.text-center=event.title
+                                p.text-center=event.description
+                    else if events.length == 2
+                        each event in events
+                            .col-sm-6.col-md-6.event
+                                img.text-center.hidden-sm.hidden-xs(src=event.image)
+                                h4.text-center=event.title
+                                p.text-center=event.description
+                    else
+                        each event in events
+                            .col-sm-6.col-md-12.event
+                                img.text-center.hidden-sm.hidden-xs(src=event.image)
+                                h4.text-center=event.title
+                                p.text-center=event.description
+
+
 
 
 
