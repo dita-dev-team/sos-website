@@ -52,6 +52,7 @@ connection.sync();
  * Adds a new event, faculty and photo urlencoded
  */
 function newEvent(newTitle, newVenue, newTime, newDescription, newImage) {
+  try{
     events.create({
         title: newTitle,
         venue: newVenue,
@@ -60,9 +61,11 @@ function newEvent(newTitle, newVenue, newTime, newDescription, newImage) {
         image: newImage
     }).then(function () {
         console.log("event saved");
-    }).catch(function (err) {
-        console.log(err.message);
-    });
+      });
+    }
+    catch (e) {
+      console.log(e.message);
+    };
 
 }
 
@@ -73,7 +76,7 @@ function newFaculty(newName, newDepartment, newPosition) {
             facultyName: newName,
             department: newDepartment,
             position: newPosition
-        }).then(function (err) {
+        }).then(function () {
             console.log("faculty member saved");
         });
     }
@@ -87,7 +90,7 @@ function newPhotos(newImageUrl) {
         photos.create
         ({
             image_url: newImageUrl
-        }).then(function (err) {
+        }).then(function () {
             console.log("Image Url Saved");
         });
     }
