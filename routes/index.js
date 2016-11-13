@@ -20,4 +20,9 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.get('/dashboard', function(req, res, next)
+{
+  res.render('dashboard', {title: 'dashboard'});
+});
+
 module.exports = router;
