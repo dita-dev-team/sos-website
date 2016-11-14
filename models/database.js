@@ -5,6 +5,7 @@ var database = require('./init');
 
 var Sequelize = database.Sequelize;
 var connection = database.sequelize;
+
 var events = connection.define('events',
     {
         title: {
@@ -46,6 +47,21 @@ var photos = connection.define('photo_urls',
         image_url: {type: Sequelize.TEXT}
     });
 
+var users = connection.define('users',
+{
+  username: {
+    type:Sequelize.STRING,
+    allowNull: false,
+    validate: {notEmpty: true},
+    unique: true
+  },
+  password: {
+    type:Sequelize.TEXT,
+    allowNull: false,
+    validate: {notEmpty: true},
+  }
+});
+
 connection.sync();
 
 /*
@@ -69,6 +85,7 @@ function newEvent(newTitle, newVenue, newTime, newDescription, newImage) {
 
 }
 
+//Adds a new Faculty member
 function newFaculty(newName, newDepartment, newPosition) {
     try {
         faculty.create
@@ -85,6 +102,7 @@ function newFaculty(newName, newDepartment, newPosition) {
     }
 }
 
+//Adds a new Photo
 function newPhotos(newImageUrl) {
     try {
         photos.create
@@ -97,6 +115,12 @@ function newPhotos(newImageUrl) {
     catch (e) {
         console.log(e.message);
     }
+}
+
+//Adds a new user for dashboard purposes
+function newUser(username, password)
+{
+  //continue adding code
 }
 
 /* Finds data from the database and returns the required rows
@@ -225,5 +249,6 @@ module.exports =
     updatePhoto: updatePhoto,
     Faculty: faculty,
     Events: events,
-    Photos: photos
+    Photos: photos,
+    Users: users
 }
