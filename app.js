@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var demo = require('./models/demo');
 var app = express();
+var db = require('./models/database');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,5 +57,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
+db.newUser('Us', 'me');
 
 module.exports = app;

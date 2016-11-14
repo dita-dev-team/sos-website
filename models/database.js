@@ -1,4 +1,5 @@
 var database = require('./init');
+var bcrypt = require('bcrypt-nodejs');
 
 //var connection = new Sequelize('sos_website', 'root', 'root'
 //);
@@ -59,7 +60,7 @@ var users = connection.define('users',
     type:Sequelize.TEXT,
     allowNull: false,
     validate: {notEmpty: true},
-  }
+  },
 });
 
 connection.sync();
@@ -118,9 +119,19 @@ function newPhotos(newImageUrl) {
 }
 
 //Adds a new user for dashboard purposes
-function newUser(username, password)
+function newUser(user, pass)
 {
-  //continue adding code
+  var hashPassword =  bcrypt.hashSync(pass, bcrypt.genSaltSync(8), null);
+  try{
+    users.create({
+      username: user,
+      password: hashPassword
+    }).then(function(){
+      console.log("username added");
+    });
+  }catch(e){
+    console.log(e.message);
+  }
 }
 
 /* Finds data from the database and returns the required rows
@@ -238,6 +249,7 @@ module.exports =
     newEvent: newEvent,
     newFaculty: newFaculty,
     newPhotos: newPhotos,
+    newUser:newUser,
     findFaculty: findFaculty,
     findPhoto: findPhoto,
     findEvent: findEvent,
