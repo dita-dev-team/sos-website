@@ -1,11 +1,6 @@
-doctype html
+extends layout
 
-html
-    title dashboard
-    header
-        link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.min.css')
-        link(rel='stylesheet', href='/stylesheets/style.css')
-    body(class="container-fluid")
+block content
         .login-margins
             form(action="", method="post")
                 input(class="form-control text-center", type="text", required, name="username", placeholder="username")
