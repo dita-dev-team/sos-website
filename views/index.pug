@@ -78,10 +78,6 @@ block content
                                 p.text-center=event.description
 
 
-
-
-
-
     // fourth section - Clubs and events
     #programmes
         .container
@@ -103,6 +99,12 @@ block content
             .row
                 .col-sm-12
                     h4.text-center We brag of the best in their respective fields
+            if faculty
+                .row
+                    each f in faculty
+                        .col-xs-12.col-sm-6.col-md-3.event.image
+                            img.text-center.hidden-xs(src=f.image)
+                            h4.text-center=f.facultyName
     // sixth section - Contact us
     #contact
         .container

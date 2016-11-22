@@ -4,7 +4,11 @@ var db = require('./database');
 db.Events.destroy({truncate: true}).catch(function (errors) {
     console.log(errors);
 });
+db.Faculty.destroy({truncate: true}).catch(function (errors) {
+    console.log(errors);
+});
 
+// Insert random events
 var n = Math.random() * (4 - 1) + 1;
 
 for (i = 0; i < n; i++) {
@@ -14,4 +18,13 @@ for (i = 0; i < n; i++) {
     var time = new Date();
     var image = 'images/demo.jpg';
     db.newEvent(title, venue, time, description, image);
+}
+
+// Insert random faculty
+for (i = 0; i < 4; i++) {
+    var name = 'Name ' + (i + 1);
+    var department = 'Department of Computer Science';
+    var position = 'Lecturer';
+    var image = 'images/demo.jpg';
+    db.newFaculty(name, department, position, image);
 }

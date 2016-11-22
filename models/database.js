@@ -40,7 +40,7 @@ var faculty = connection.define('faculty',
             allowNull: false,
             validate: {notEmpty: true}
         },
-        image_url: {type: Sequelize.TEXT}
+        image: {type: Sequelize.STRING}
     });
 
 var photos = connection.define('photo_urls',
@@ -87,13 +87,14 @@ function newEvent(newTitle, newVenue, newTime, newDescription, newImage) {
 }
 
 //Adds a new Faculty member
-function newFaculty(newName, newDepartment, newPosition) {
+function newFaculty(newName, newDepartment, newPosition, newImage) {
     try {
         faculty.create
         ({
             facultyName: newName,
             department: newDepartment,
-            position: newPosition
+            position: newPosition,
+            image: newImage
         }).then(function () {
             console.log("faculty member saved");
         });
