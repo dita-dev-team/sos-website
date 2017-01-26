@@ -6,6 +6,8 @@ html
     title= title
     link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://unpkg.com/leaflet@1.0.3/dist/leaflet.css')
+
   body(data-spy='scroll', data-target='.navbar')
     nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
       .container-fluid
@@ -36,5 +38,5 @@ html
   script(src='libs/bootstrap/dist/js/bootstrap.min.js')
   script(src='scripts/jquery.easing.min.js')
   script(src='scripts/scrolling-nav.js')
-  script(async='', defer='', src='https://maps.googleapis.com/maps/api/js?libraries=drawing,geometry&key=AIzaSyAHSZHfNanEI64wMO0M6URymVBIGOh3wSA&callback=initMap')
+  script(src='https://unpkg.com/leaflet@1.0.3/dist/leaflet.js')
   script(src='scripts/script.js')
