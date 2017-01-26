@@ -1,5 +1,4 @@
-
-var mymap = L.map('map').setView([-1.4410932, 37.0449278], 13);
+var mymap = L.map('map').setView([-1.4431146, 37.0490923], 14);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/mtotomgonjwa.2of0mcnl/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibXRvdG9tZ29uandhIiwiYSI6ImNpeWVpeXJzMzAwOTEzM3FwcDV5bnY5NWsifQ.zZ_ILTdPpKgrwQyd7p88pg', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -9,5 +8,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/mtotomgonjwa.2of0mcnl/{z}/{x}/{y}.p
 }).addTo(mymap);
 
 
-var marker = L.marker([-1.4410932, 37.0449278]).addTo(mymap);
-marker.bindPopup("<b>Hello world!</b><br>Welcome to Daystar");
+var marker = L.marker([-1.4431146, 37.0490923]).addTo(mymap);
+marker.bindPopup("<b>Hello world!</b><br>Welcome to Daystar Athi River Campus");
+var marker = L.marker([-1.2969668,36.8018029]).addTo(mymap);
+marker.bindPopup("<b>Hello world!</b><br>Welcome to Daystar Valley Road Campus");
