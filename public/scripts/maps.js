@@ -12,3 +12,8 @@ var marker = L.marker([-1.4431146, 37.0490923]).addTo(mymap);
 marker.bindPopup("<b>Hello world!</b><br>Welcome to Daystar Athi River Campus");
 var marker = L.marker([-1.2969668,36.8018029]).addTo(mymap);
 marker.bindPopup("<b>Hello world!</b><br>Welcome to Daystar Valley Road Campus");
+
+mymap.fitBounds([
+    [-1.4431146, 37.0490923],
+    [-1.2969668,36.8018029]
+]);
